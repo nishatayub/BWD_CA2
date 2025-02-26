@@ -7,10 +7,10 @@ app.use(express.json());
 app.get("/user", (req,res)=>{
     const {email, password} = req.body;
     if(!email){
-        res.send("Email cannot be empty");
+        res.json({message: "Email cannot be empty"});
     }
     if(!password){
-        res.send("Password cannot be empty");
+        res.json({message: "Password cannot be empty"});
     }
     const user = {
         email,
